@@ -27,7 +27,7 @@
     "id": "1",
     "user": {"id":"id","name":"John Wayne","email":"johnw@outlook.com","password":"hispass","address":"somewhere"},
     "value": "Nah, today is workday",
-    "date": "2023-07-17T21:31:48.402Z",
+    "date": "2023-07-13T21:31:48.402Z",
     "likes": 2,
     "comments": []
   }
