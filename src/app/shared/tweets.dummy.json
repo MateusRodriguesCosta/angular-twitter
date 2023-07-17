@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1",
+    "user": {"id":"id","name":"John Wayne","email":"johnw@outlook.com","password":"hispass","address":"somewhere"},
+    "value": "This card has divider and indeterminate progress as footer TWEET #peace",
+    "date": "2023-07-17T21:31:48.402Z",
+    "likes": 15,
+    "comments": []
+  },
+  {
+    "id": "1",
+    "user": {"id":"id","name":"Russel","email":"russel@outlook.com","password":"hispass","address":"somewhere"},
+    "value": "No way its going to be done in time #peace",
+    "date": "2023-07-12T21:31:48.402Z",
+    "likes": 27,
+    "comments": []
+  },
+  {
+    "id": "1",
+    "user": {"id":"id","name":"Maria R","email":"maria@outlook.com","password":"hispass","address":"somewhere"},
+    "value": "Look how peaceful it is!",
+    "date": "2023-07-17T21:31:48.402Z",
+    "likes": 123,
+    "comments": []
+  },
+  {
+    "id": "1",
+    "user": {"id":"id","name":"John Wayne","email":"johnw@outlook.com","password":"hispass","address":"somewhere"},
+    "value": "Nah, today is workday",
+    "date": "2023-07-17T21:31:48.402Z",
+    "likes": 2,
+    "comments": []
+  }
+
+]
