@@ -25,10 +25,6 @@ p {
 }
 
 .toolbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   height: 60px;
   display: flex;
   align-items: center;
@@ -44,16 +40,6 @@ p {
 .toolbar #twitter-logo {
   height: 40px;
   margin: 0 8px;
-}
-
-.toolbar #youtube-logo {
-  height: 40px;
-  margin: 0 16px;
-}
-
-.toolbar #twitter-logo:hover,
-.toolbar #youtube-logo:hover {
-  opacity: 0.8;
 }
 
 .content {
@@ -289,4 +275,17 @@ svg#clouds {
     display: none;
     visibility: hidden;
   }
+}
+
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+}
+
+mat-sidenav {
+  width: 250px;
 }

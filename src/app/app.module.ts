@@ -9,6 +9,8 @@ import {MatDividerModule} from "@angular/material/divider";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {MatButtonModule} from "@angular/material/button";
 import { PublishComponent } from './publish/publish.component';
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { PublishComponent } from './publish/publish.component';
     MatCardModule,
     MatDividerModule,
     MatProgressBarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSidenavModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,7 +16,7 @@ export class FeedComponent implements OnInit {
 
   ngOnInit(): void {
     this.tweets = dummyTweets.sort((a: Tweet, b: Tweet) => {
-      return +new Date(a.date) - +new Date(b.date)
+      return +new Date(b.date) - +new Date(a.date)
     });
   }
 
