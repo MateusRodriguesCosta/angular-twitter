@@ -4,9 +4,9 @@ export class Comment {
   id: string;
   user: User;
   value: string;
-  date: Date;
+  date: string;
 
-  constructor(id: string, user: User, value: string, date: Date) {
+  constructor(id: string, user: User, value: string, date: string) {
     this.id = id;
     this.user = user;
     this.value = value;

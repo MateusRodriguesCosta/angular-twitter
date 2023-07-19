@@ -10,8 +10,12 @@
       <mat-divider></mat-divider>
     </mat-card-content>
     <mat-card-actions>
-      {{tweet.likes}}<button mat-button>LIKE</button>
-      <button mat-button>COMMENT</button>
+      <button mat-icon-button aria-label="COMMENT" title="Comment">
+        <mat-icon>comment</mat-icon>
+      </button>{{(tweet.comments.length > 0)? tweet.comments.length : '' }}
+      <button mat-icon-button color="warn" aria-label="LIKE" title="Like">
+        <mat-icon>favorite</mat-icon>
+      </button>{{tweet.likes}}
     </mat-card-actions>
   </mat-card>
 </ng-container>

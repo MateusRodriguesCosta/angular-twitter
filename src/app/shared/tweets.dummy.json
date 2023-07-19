@@ -5,7 +5,20 @@
     "value": "This card has divider and indeterminate progress as footer #angularTwitter",
     "date": "2023-07-17T21:31:48.402Z",
     "likes": 15,
-    "comments": []
+    "comments": [
+      {
+        "id": "1",
+        "user": {"id":"id","name":"Maria R","email":"maria@outlook.com","password":"hispass","address":"somewhere"},
+        "value": "Nice content John ;)",
+        "date": "2023-07-17T22:32:58.402Z"
+      },
+      {
+        "id": "2",
+        "user": {"id":"id","name":"Maria R","email":"maria@outlook.com","password":"hispass","address":"somewhere"},
+        "value": "Forgot to say that this is just a test :S",
+        "date": "2023-07-17T22:33:58.402Z"
+      }
+    ]
   },
   {
     "id": "2",
@@ -21,7 +34,14 @@
     "value": "Look how peaceful it is!",
     "date": "2023-07-17T21:31:48.402Z",
     "likes": 123,
-    "comments": []
+    "comments": [
+      {
+        "id": "3",
+        "user": {"id":"id","name":"Mark West","email":"mwest@outlook.com","password":"hispass","address":"somewhere"},
+        "value": "Sure it is Maria! #nonsense",
+        "date": "2023-07-17T21:42:48.402Z"
+      }
+    ]
   },
   {
     "id": "4",
