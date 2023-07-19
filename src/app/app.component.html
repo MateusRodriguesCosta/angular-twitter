@@ -12,16 +12,16 @@
 <mat-sidenav-container>
   <mat-sidenav mode="side" opened>
     <div style="display: block">
-      <a mat-button routerLink="/about-us">
+      <a mat-button routerLink="/home">
         <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon> Home
       </a>
-      <a mat-button routerLink="/prices">
+      <a mat-button routerLink="/notifications">
         <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="alarm"></mat-icon> Notifications
       </a>
-      <a mat-button routerLink="/start-page">
+      <a mat-button routerLink="/messages">
         <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="message"></mat-icon> Messages
       </a>
-      <a mat-button routerLink="/offer">
+      <a mat-button routerLink="/profile">
         <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="account_circle"></mat-icon> Profile
       </a>
     </div>
@@ -29,9 +29,7 @@
   <mat-sidenav-content>
     <app-tweet></app-tweet>
     <div class="content" role="main">
-      <app-feed [user]="user"></app-feed>
+      <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-<router-outlet></router-outlet>

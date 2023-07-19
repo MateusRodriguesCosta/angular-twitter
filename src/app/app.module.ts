@@ -14,13 +14,21 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatIconModule} from "@angular/material/icon";
 import { TweetComponent } from './tweet/tweet.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { MessagesComponent } from './messages/messages.component';
+import { ProfileComponent } from './profile/profile.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FeedComponent,
     PublishComponent,
-    TweetComponent
+    TweetComponent,
+    NotificationsComponent,
+    MessagesComponent,
+    ProfileComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
