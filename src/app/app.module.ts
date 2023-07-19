@@ -13,12 +13,14 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatIconModule} from "@angular/material/icon";
+import { TweetComponent } from './tweet/tweet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FeedComponent,
-    PublishComponent
+    PublishComponent,
+    TweetComponent
   ],
   imports: [
     BrowserModule,
