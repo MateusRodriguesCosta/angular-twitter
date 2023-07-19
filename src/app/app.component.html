@@ -8,8 +8,24 @@
   <span>Welcome to Angular Twitter</span>
 </mat-toolbar>
 
+
 <mat-sidenav-container>
-  <mat-sidenav mode="side" opened>Sidenav content</mat-sidenav>
+  <mat-sidenav mode="side" opened>
+    <div style="display: block">
+      <a mat-button routerLink="/about-us">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon> Home
+      </a>
+      <a mat-button routerLink="/prices">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="alarm"></mat-icon> Notifications
+      </a>
+      <a mat-button routerLink="/start-page">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="message"></mat-icon> Messages
+      </a>
+      <a mat-button routerLink="/offer">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="account_circle"></mat-icon> Profile
+      </a>
+    </div>
+  </mat-sidenav>
   <mat-sidenav-content>
     <div class="content" role="main">
       <app-feed [user]="user"></app-feed>

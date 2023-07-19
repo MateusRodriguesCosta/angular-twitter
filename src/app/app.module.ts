@@ -11,6 +11,8 @@ import {MatButtonModule} from "@angular/material/button";
 import { PublishComponent } from './publish/publish.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatMenuModule} from "@angular/material/menu";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     MatProgressBarModule,
     MatButtonModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatMenuModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
