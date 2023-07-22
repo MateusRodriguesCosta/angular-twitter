@@ -11,7 +11,7 @@
     <button mat-icon-button aria-label="COMMENT" title="Comment">
       <mat-icon>comment</mat-icon>
     </button>{{(tweet.comments.length > 0)? tweet.comments.length : '' }}
-    <button mat-icon-button color="warn" aria-label="LIKE" title="Like">
+    <button (click)="onLikeClick(tweet.id)" mat-icon-button color="warn" aria-label="LIKE" title="Like">
       <mat-icon>favorite</mat-icon>
     </button>{{(tweet.likes > 0)? tweet.likes : ''}}
   </mat-card-actions>

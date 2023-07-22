@@ -26,6 +26,11 @@ export class TweetService {
     this.sortTweets();
   }
 
+  public addLike(tweetId: string) {
+    const index = this._tweets.findIndex(t => t.id == tweetId);
+    this._tweets[index].likes += 1;
+  }
+
   private sortTweets(){
     this._tweets = this._tweets.sort((a: Tweet, b: Tweet) => {
       return +new Date(b.date) - +new Date(a.date)
