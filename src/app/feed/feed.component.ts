@@ -19,9 +19,13 @@ export class FeedComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loadNewTweets();
+  }
+
+  loadNewTweets() {
     this.tweetService.tweets.subscribe(
       tweets => this.tweets = tweets
-    )
+    );
   }
 
 
