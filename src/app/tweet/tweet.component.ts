@@ -1,7 +1,5 @@
-import {Component, EventEmitter, Output} from '@angular/core';
-import {TweetService} from "./tweet.service";
+import {Component, Input} from '@angular/core';
 import {Tweet} from "../shared/model/tweet.class";
-import {User} from "../shared/model/user.class";
 
 @Component({
   selector: 'app-tweet',
@@ -10,18 +8,7 @@ import {User} from "../shared/model/user.class";
 })
 export class TweetComponent {
 
-  @Output()
-  tweetEvent = new EventEmitter<any>();
-
-  constructor(private tweetService: TweetService) {
-  }
-
-  onTweetClick(text: string): void {
-    console.log(text)
-    let tweet = new Tweet('test', text, new Date().toString(),0,[]);
-    this.tweetService.addTweet(tweet);
-    this.tweetEvent.emit();
-  }
-
+  @Input()
+  tweet: Tweet;
 
 }

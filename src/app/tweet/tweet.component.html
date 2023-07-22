@@ -1,15 +1,18 @@
-<ng-container>
-  <mat-card class="tweet-card">
-    <mat-card-content>
-      <form class="example-form">
-        <mat-form-field class="example-full-width">
-          <mat-label>What's happening?</mat-label>
-          <textarea #tweet matInput placeholder="Ex. It makes me feel..."></textarea>
-        </mat-form-field>
-      </form>
-    </mat-card-content>
-    <mat-card-actions>
-      <button (click)="onTweetClick(tweet.value)" mat-raised-button color="primary">Tweet</button>
-    </mat-card-actions>
-  </mat-card>
-</ng-container>
+<mat-card class="feed-card">
+  <mat-card-header>
+    <mat-card-subtitle>{{tweet.date | date}}</mat-card-subtitle>
+    <mat-card-title>{{tweet.user.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{tweet.value}}</p>
+    <mat-divider></mat-divider>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-icon-button aria-label="COMMENT" title="Comment">
+      <mat-icon>comment</mat-icon>
+    </button>{{(tweet.comments.length > 0)? tweet.comments.length : '' }}
+    <button mat-icon-button color="warn" aria-label="LIKE" title="Like">
+      <mat-icon>favorite</mat-icon>
+    </button>{{(tweet.likes > 0)? tweet.likes : ''}}
+  </mat-card-actions>
+</mat-card>
