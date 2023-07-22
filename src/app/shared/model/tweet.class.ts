@@ -9,9 +9,8 @@ export class Tweet {
   likes: number;
   comments: Array<Comment>
 
-  constructor(id: string, user: User, value: string, date: string, likes: number, comments: Array<Comment>) {
+  constructor(id: string, value: string, date: string, likes: number, comments: Array<Comment>) {
     this.id = id;
-    this.user = user;
     this.value = value;
     this.date = date;
     this.likes = likes;
