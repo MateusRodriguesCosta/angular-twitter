@@ -12,12 +12,12 @@ export class TweetComponent {
 
   @Output()
   tweetEvent = new EventEmitter<any>();
-  tweet: string = "";
 
   constructor(private tweetService: TweetService) {
   }
 
   onTweetClick(text: string): void {
+    console.log(text)
     let tweet = new Tweet('test', text, new Date().toString(),0,[]);
     this.tweetService.addTweet(tweet);
     this.tweetEvent.emit();
