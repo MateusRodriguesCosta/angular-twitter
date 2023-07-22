@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Tweet} from "../shared/model/tweet.class";
 import {User} from "../shared/model/user.class";
 import dummyTweets from "../shared/tweets.dummy.json";
+import {TweetService} from "../tweet/tweet.service";
 
 @Component({
   selector: 'app-feed',
@@ -14,10 +15,13 @@ export class FeedComponent implements OnInit {
   user: User;
   tweets: Array<Tweet>;
 
+  constructor(private tweetService: TweetService) {
+  }
+
   ngOnInit(): void {
-    this.tweets = dummyTweets.sort((a: Tweet, b: Tweet) => {
-      return +new Date(b.date) - +new Date(a.date)
-    });
+    this.tweetService.tweets.subscribe(
+      tweets => this.tweets = tweets
+    )
   }
 
 
