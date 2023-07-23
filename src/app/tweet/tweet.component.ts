@@ -18,4 +18,28 @@ export class TweetComponent {
     this.tweetService.addLike(tweetId);
   }
 
+  get hasLikes() {
+    return (this.tweet.likes > 0);
+  }
+
+  get hasComments() {
+    return (this.tweet.comments.length > 0);
+  }
+
+  likesDisplay() {
+    return this.hasLikes? this.tweet.likes : '';
+  }
+
+  commentsDisplay() {
+    return this.hasComments? this.tweet.comments.length : '';
+  }
+
+  likesColor() {
+    return this.hasLikes? 'red' : '#888888';
+  }
+
+  commentsColor() {
+    return this.hasComments? '#125699' : '#888888';
+  }
+
 }
