@@ -23,4 +23,8 @@ export class NotificationsComponent implements OnInit{
     );
   }
 
+  protected get dateTime() {
+    return new Date();
+  }
+
 }

@@ -4,11 +4,47 @@
     "type": "new_tweet",
     "user": {
       "id": "12345",
-      "name": "Mateus Costa",
-      "email": "m_costa@outlook.com",
+      "name": "John Wayne",
+      "email": "ohnw@outlook.com",
       "password": "hispass",
       "address": "somewhere"
     },
-    "dateTime": "2023-07-17T21:42:48.402Z"
+    "dateTime": "2023-07-25T21:42:48.402Z"
+  },
+  {
+    "id": "2",
+    "type": "new_tweet",
+    "user": {
+      "id": "12345",
+      "name": "Russel",
+      "email": "russel@outlook.com",
+      "password": "hispass",
+      "address": "somewhere"
+    },
+    "dateTime": "2023-07-22T21:42:48.402Z"
+  },
+  {
+    "id": "3",
+    "type": "mention_photo",
+    "user": {
+      "id": "12345",
+      "name": "Maria R",
+      "email": "maria@outlook.com",
+      "password": "hispass",
+      "address": "somewhere"
+    },
+    "dateTime": "2023-07-18T21:42:48.402Z"
+  },
+  {
+    "id": "4",
+    "type": "new_photo",
+    "user": {
+      "id": "12345",
+      "name": "Maria R",
+      "email": "maria@outlook.com",
+      "password": "hispass",
+      "address": "somewhere"
+    },
+    "dateTime": "2023-07-18T21:42:48.402Z"
   }
 ]

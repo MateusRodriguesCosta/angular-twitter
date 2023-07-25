@@ -1,1 +1,25 @@
-<p>notifications works!</p>
+<ng-container>
+  <mat-card class="feed-card">
+    <mat-card-header>
+      <mat-card-title>Notifications</mat-card-title>
+      <mat-card-subtitle>Last updated on {{dateTime | date:'hh:mm'}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list *ngFor="let notification of notifications">
+        <mat-list-item *ngIf="notification.type == 'new_tweet'">
+          {{notification.user.name}} added a new tweet in the timeline.
+          <h6>On {{notification.dateTime | date}}</h6>
+        </mat-list-item>
+        <mat-list-item *ngIf="notification.type == 'new_photo'">
+          {{notification.user.name}} added a new photo in the timeline.
+          <h6>On {{notification.dateTime | date}}</h6>
+        </mat-list-item>
+        <mat-list-item *ngIf="notification.type == 'mention_photo'">
+          {{notification.user.name}} mentioned you in it's new photo.
+          <h6>On {{notification.dateTime | date}}</h6>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</ng-container>
