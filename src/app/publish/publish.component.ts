@@ -16,7 +16,7 @@ export class PublishComponent {
   }
 
   onTweetClick(text: string): void {
-    console.log(text)
+    if (!text) return;
     let tweet = new Tweet('test', text, new Date().toString(),0,[]);
     this.tweetService.addTweet(tweet);
     this.tweetEvent.emit();

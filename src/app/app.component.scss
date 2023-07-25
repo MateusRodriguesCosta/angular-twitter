@@ -294,3 +294,9 @@ mat-sidenav {
 .sidenav-container {
   flex: 1;
 }
+
+.twitter-menu {
+  display: grid;
+  justify-content: start;
+  justify-items: start;
+}

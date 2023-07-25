@@ -1,15 +1,14 @@
 <ng-container>
   <mat-card class="tweet-card">
     <mat-card-content>
-      <form class="example-form">
-        <mat-form-field class="example-full-width">
+        <mat-form-field>
           <mat-label>What's happening?</mat-label>
-          <textarea #tweet matInput placeholder="Ex. It makes me feel..."></textarea>
+          <textarea maxlength="280" #tweet matInput></textarea>
+          <h6>You have left {{280 - tweet.value.length}} characters</h6>
         </mat-form-field>
-      </form>
+      <mat-card-actions align="end">
+        <button (click)="onTweetClick(tweet.value)" mat-raised-button color="primary">Tweet</button>
+      </mat-card-actions>
     </mat-card-content>
-    <mat-card-actions>
-      <button (click)="onTweetClick(tweet.value)" mat-raised-button color="primary">Tweet</button>
-    </mat-card-actions>
   </mat-card>
 </ng-container>
