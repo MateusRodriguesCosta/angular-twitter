@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "type": "new_tweet",
+    "user": {
+      "id": "12345",
+      "name": "Mateus Costa",
+      "email": "m_costa@outlook.com",
+      "password": "hispass",
+      "address": "somewhere"
+    },
+    "dateTime": "2023-07-17T21:42:48.402Z"
+  }
+]
