@@ -26,19 +26,19 @@ export class TweetComponent {
     return (this.tweet.comments.length > 0);
   }
 
-  likesDisplay() {
+  get likesDisplay() {
     return this.hasLikes? this.tweet.likes : '';
   }
 
-  commentsDisplay() {
+  get commentsDisplay() {
     return this.hasComments? this.tweet.comments.length : '';
   }
 
-  likesColor() {
+  get likesColor() {
     return this.hasLikes? 'red' : '#888888';
   }
 
-  commentsColor() {
+  get commentsColor() {
     return this.hasComments? '#125699' : '#888888';
   }
 

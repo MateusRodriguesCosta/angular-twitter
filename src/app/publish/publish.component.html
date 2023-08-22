@@ -3,11 +3,11 @@
     <mat-card-content>
         <mat-form-field>
           <mat-label>What's happening?</mat-label>
-          <textarea maxlength="280" #tweet matInput></textarea>
-          <h6>You have left {{280 - tweet.value.length}} characters</h6>
+          <textarea [attr.maxlength]="TWEET_MAX_LENGTH" [(ngModel)]="TWEET" matInput></textarea>
+          <h6>{{charactersLeft}}</h6>
         </mat-form-field>
       <mat-card-actions align="end">
-        <button (click)="onTweetClick(tweet.value)" mat-raised-button color="primary">Tweet</button>
+        <button (click)="onTweetClick()" mat-raised-button color="primary">Tweet</button>
       </mat-card-actions>
     </mat-card-content>
   </mat-card>

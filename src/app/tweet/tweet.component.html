@@ -8,11 +8,11 @@
     <mat-divider></mat-divider>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-icon-button [ngStyle]="{'color': commentsColor()}" aria-label="COMMENT" title="Comment">
+    <button mat-icon-button [ngStyle]="{'color': commentsColor}" aria-label="COMMENT" title="Comment">
       <mat-icon>comment</mat-icon>
-    </button>{{commentsDisplay()}}
-    <button (click)="onLikeClick(tweet.id)" mat-icon-button [ngStyle]="{'color': likesColor()}"  aria-label="LIKE" title="Like">
+    </button>{{commentsDisplay}}
+    <button (click)="onLikeClick(tweet.id)" mat-icon-button [ngStyle]="{'color': likesColor}"  aria-label="LIKE" title="Like">
       <mat-icon>favorite</mat-icon>
-    </button>{{likesDisplay()}}
+    </button>{{likesDisplay}}
   </mat-card-actions>
 </mat-card>

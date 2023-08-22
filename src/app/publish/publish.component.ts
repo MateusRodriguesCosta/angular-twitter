@@ -10,16 +10,21 @@ import {Tweet} from "../shared/model/tweet.class";
 export class PublishComponent {
 
   @Output()
-  tweetEvent = new EventEmitter<any>();
-
+  tweetEvent: EventEmitter<any> = new EventEmitter<any>();
+  TWEET_MAX_LENGTH: number = 280;
+  TWEET: string;
   constructor(private tweetService: TweetService) {
   }
 
-  onTweetClick(text: string): void {
-    if (!text) return;
-    let tweet = new Tweet('test', text, new Date().toString(),0,[]);
+  onTweetClick(): void {
+    if (!this.TWEET) return;
+    let tweet = new Tweet('test', this.TWEET, new Date().toString(),0,[]);
     this.tweetService.addTweet(tweet);
     this.tweetEvent.emit();
+  }
+
+  charactersLeft(): string {
+    return `You have left ${this.TWEET_MAX_LENGTH - this.TWEET.length} characters`;
   }
 
 }

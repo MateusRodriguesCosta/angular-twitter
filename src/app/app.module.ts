@@ -20,6 +20,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import {MatInputModule} from "@angular/material/input";
 import {MatListModule} from "@angular/material/list";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -32,21 +33,22 @@ import {MatListModule} from "@angular/material/list";
     ProfileComponent,
     HomeComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatCardModule,
-    MatDividerModule,
-    MatProgressBarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatCardModule,
+        MatDividerModule,
+        MatProgressBarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatToolbarModule,
+        MatMenuModule,
+        MatIconModule,
+        MatInputModule,
+        MatListModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
