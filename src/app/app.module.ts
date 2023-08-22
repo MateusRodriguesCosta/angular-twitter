@@ -21,6 +21,7 @@ import { HomeComponent } from './home/home.component';
 import {MatInputModule} from "@angular/material/input";
 import {MatListModule} from "@angular/material/list";
 import {FormsModule} from "@angular/forms";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -33,22 +34,23 @@ import {FormsModule} from "@angular/forms";
     ProfileComponent,
     HomeComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatCardModule,
-        MatDividerModule,
-        MatProgressBarModule,
-        MatButtonModule,
-        MatSidenavModule,
-        MatToolbarModule,
-        MatMenuModule,
-        MatIconModule,
-        MatInputModule,
-        MatListModule,
-        FormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatDividerModule,
+    MatProgressBarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    FormsModule,
+    MatSelectModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
