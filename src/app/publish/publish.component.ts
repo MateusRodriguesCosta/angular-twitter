@@ -12,7 +12,7 @@ export class PublishComponent {
   @Output()
   tweetEvent: EventEmitter<any> = new EventEmitter<any>();
   TWEET_MAX_LENGTH: number = 280;
-  TWEET: string;
+  TWEET: string = '';
   constructor(private tweetService: TweetService) {
   }
 
@@ -23,7 +23,7 @@ export class PublishComponent {
     this.tweetEvent.emit();
   }
 
-  charactersLeft(): string {
+  get charactersLeft(): string {
     return `You have left ${this.TWEET_MAX_LENGTH - this.TWEET.length} characters`;
   }
 

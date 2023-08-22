@@ -4,7 +4,7 @@
         <mat-form-field>
           <mat-label>What's happening?</mat-label>
           <textarea [attr.maxlength]="TWEET_MAX_LENGTH" [(ngModel)]="TWEET" matInput></textarea>
-          <h6>{{charactersLeft}}</h6>
+          <h6 [innerHTML]="charactersLeft"></h6>
         </mat-form-field>
       <mat-card-actions align="end">
         <button (click)="onTweetClick()" mat-raised-button color="primary">Tweet</button>
