@@ -14,6 +14,6 @@ export class ProfileComponent {
   from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was
   originally bred for hunting.`;
   constructor(private userService: UserService) {
-    this.user = userService.user;
+    this.user = userService.localUser;
   }
 }

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from "../shared/model/user.class";
+import {UserService} from "../shared/user.service";
 
 @Component({
   selector: 'app-home',
@@ -7,8 +7,13 @@ import {User} from "../shared/model/user.class";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  user: User;
+
+  constructor(private userService: UserService) {
+  }
+
   ngOnInit() {
-    this.user = new User("id", "John Wayne", "johnw@outlook.com", "hispass", "somewhere");
+      this.userService.users.subscribe(users => {
+        this.userService.localUser = users[0];
+      });
   }
 }

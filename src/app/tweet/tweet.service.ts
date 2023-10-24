@@ -1,42 +1,27 @@
 import {Injectable} from '@angular/core';
-import dummyTweets from "../shared/data/tweets.dummy.json";
 import {Tweet} from "../shared/model/tweet.class";
-import {Observable, of} from "rxjs";
-import {UserService} from "../shared/user.service";
+import {Observable} from "rxjs";
+import {HttpClient} from "@angular/common/http";
+import {serviceURL} from "../shared/Common/service-url.enum";
 
 @Injectable({
   providedIn: 'root'
 })
 export class TweetService {
 
-  private _tweets: Tweet[];
-
-  constructor(private userService: UserService) {
-    this._tweets = dummyTweets;
-    this.sortTweets();
+  constructor(private http: HttpClient) {
   }
 
   public get tweets(): Observable<Tweet[]> {
-    return of(this._tweets);
+    return this.http.get<Tweet[]>(serviceURL.MainUrl + `/tweets/`);
   }
 
-  public addTweet(tweet: Tweet): void {
-    if(this.userService.user) {
-      tweet.user = this.userService.user;
-      this._tweets.push(tweet);
-      this.sortTweets();
-    }
+  public addTweet(tweet: Tweet): Observable<Tweet> {
+    return this.http.post<Tweet>(serviceURL.MainUrl + `/tweets/`, tweet);
   }
 
   public addLike(tweetId: string) {
-    const index = this._tweets.findIndex(t => t.id == tweetId);
-    this._tweets[index].likes += 1;
-  }
-
-  private sortTweets(){
-    this._tweets = this._tweets.sort((a: Tweet, b: Tweet) => {
-      return +new Date(b.date) - +new Date(a.date)
-    });
+    return this.http.patch<Tweet>(serviceURL.MainUrl + `/tweets/like/${tweetId}`, null);
   }
 
 }

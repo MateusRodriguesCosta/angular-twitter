@@ -18,10 +18,25 @@ export class FeedComponent implements OnInit {
     this.loadNewTweets();
   }
 
-  loadNewTweets() {
-    this.tweetService.tweets.subscribe(
-      tweets => this.tweets = tweets
-    );
+  loadNewTweets(tweet?: Tweet) {
+    console.log(tweet)
+    if (tweet) {
+      this.tweets.push(tweet);
+      this.sortTweets();
+    } else {
+      this.tweetService.tweets.subscribe(
+        tweets => {
+          this.tweets = tweets
+          this.sortTweets();
+        }
+      );
+    }
+  }
+
+  private sortTweets() {
+    this.tweets = this.tweets.sort((a: Tweet, b: Tweet) => {
+      return +new Date(b.date) - +new Date(a.date)
+    });
   }
 
 

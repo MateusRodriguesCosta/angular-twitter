@@ -15,7 +15,10 @@ export class TweetComponent {
   constructor(private tweetService: TweetService) {
   }
   onLikeClick(tweetId: string){
-    this.tweetService.addLike(tweetId);
+    this.tweetService.addLike(tweetId).subscribe(
+      (tweet: Tweet) => {
+        this.tweet = tweet;
+      });
   }
 
   get hasLikes() {
@@ -23,7 +26,7 @@ export class TweetComponent {
   }
 
   get hasComments() {
-    return (this.tweet.comments.length > 0);
+    return (this.tweet.comments?.length > 0);
   }
 
   get likesDisplay() {

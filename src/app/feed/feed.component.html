@@ -1,4 +1,4 @@
-<app-publish (tweetEvent)="loadNewTweets()"></app-publish>
+<app-publish (tweetEvent)="loadNewTweets($event)"></app-publish>
 <ng-container>
   <app-tweet [tweet]="tweet" *ngFor="let tweet of tweets"></app-tweet>
 </ng-container>

@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {TweetService} from "../tweet/tweet.service";
 import {Tweet} from "../shared/model/tweet.class";
+import {UserService} from "../shared/user.service";
 
 @Component({
   selector: 'app-publish',
@@ -10,17 +11,21 @@ import {Tweet} from "../shared/model/tweet.class";
 export class PublishComponent {
 
   @Output()
-  tweetEvent: EventEmitter<any> = new EventEmitter<any>();
+  tweetEvent: EventEmitter<Tweet> = new EventEmitter<Tweet>();
   TWEET_MAX_LENGTH: number = 280;
   TWEET: string = '';
-  constructor(private tweetService: TweetService) {
+  constructor(private tweetService: TweetService,
+              private userService: UserService) {
   }
 
   onTweetClick(): void {
     if (!this.TWEET) return;
-    let tweet = new Tweet('test', this.TWEET, new Date().toString(),0,[]);
-    this.tweetService.addTweet(tweet);
-    this.tweetEvent.emit();
+    let tweet = new Tweet('teste', this.TWEET, new Date().toString(),0,[]);
+    tweet.user = this.userService.localUser;
+    this.tweetService.addTweet(tweet).subscribe(
+      (tweet: Tweet) => {
+        this.tweetEvent.emit(tweet);
+      });
   }
 
   get charactersLeft(): string {

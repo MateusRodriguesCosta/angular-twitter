@@ -1,23 +1,27 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {User} from "./model/user.class";
-import dummyUser from "./data/user.dummy.json";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
+import {serviceURL} from "./Common/service-url.enum";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor() {
-    this.user = dummyUser;
+  constructor(private http: HttpClient) {}
+
+  get users(): Observable<User[]> {
+    return this.http.get<User[]>(serviceURL.MainUrl + `/users/`);
   }
 
-  get user(): User | null {
+  get localUser(): User {
     const user = sessionStorage.getItem("current-user");
     if (user) return JSON.parse(user);
-    return null;
+    return {} as User;
   }
 
-  set user(user: User | null) {
+  set localUser(user: User | null) {
     sessionStorage.setItem("current-user", JSON.stringify(user));
   }
 }
