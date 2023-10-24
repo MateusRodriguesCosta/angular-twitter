@@ -19,8 +19,17 @@ export class NotificationsComponent implements OnInit{
 
   loadNewNotifications() {
     this.twitterNotificationsService.notifications.subscribe(
-      notifications => this.notifications = notifications
+      notifications => {
+        this.notifications = notifications;
+        this.sortNotifications();
+      }
     );
+  }
+
+  private sortNotifications(){
+    this.notifications = this.notifications.sort((a: TwitterNotification, b: TwitterNotification) => {
+      return +new Date(b.dateTime) - +new Date(a.dateTime)
+    });
   }
 
   protected get dateTime() {

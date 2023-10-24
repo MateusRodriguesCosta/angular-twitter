@@ -2,8 +2,9 @@
   <mat-card class="profile-card">
     <mat-card-header>
       <mat-card-title-group>
-        <mat-card-title>Profile</mat-card-title>
-        <mat-card-subtitle>Welcome @{{user?.name}}</mat-card-subtitle>
+        <mat-card-title>Profile <mat-icon *ngIf="user.verifiedAccount" title="Verified Account" color="primary" aria-hidden="false" aria-label="Verified Account Icon" fontIcon="check_circle"></mat-icon></mat-card-title>
+        <mat-card-subtitle>Welcome @{{user.name}}</mat-card-subtitle>
+        <mat-card-subtitle><strong>{{following}}</strong> Following <strong>{{followers}}</strong> Followers</mat-card-subtitle>
         <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"  alt="Image of a Shiba Inu">
       </mat-card-title-group>
     </mat-card-header>
@@ -12,36 +13,33 @@
         <mat-list-item>
           <mat-form-field style="margin-top: 20px">
             <mat-label>Textarea</mat-label>
-            <textarea matInput></textarea>
+              <textarea matInput>{{user.bio}}</textarea>
           </mat-form-field>
         </mat-list-item>
         <mat-list-item>
           <mat-form-field>
             <mat-label>Input</mat-label>
-            <input matInput>
+            <input matInput [value]="user.email">
           </mat-form-field>
         </mat-list-item>
         <mat-list-item>
           <mat-form-field>
             <mat-label>Input</mat-label>
-            <input matInput>
+            <input matInput [value]="user.phone">
           </mat-form-field>
         </mat-list-item>
         <mat-list-item>
           <mat-form-field>
             <mat-label>Select</mat-label>
-            <mat-select>
+            <mat-select value="one">
               <mat-option value="one">First option</mat-option>
               <mat-option value="two">Second option</mat-option>
             </mat-select>
           </mat-form-field>
         </mat-list-item>
+        <p>Joined on {{user.joinedDate}}</p>
         {{longText}}
       </mat-list>
-
-
-
-
     </mat-card-content>
   </mat-card>
 </ng-container>

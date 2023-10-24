@@ -14,10 +14,15 @@
           {{notification.user.name}} added a new photo in the timeline.
           <h6>On {{notification.dateTime | date}}</h6>
         </mat-list-item>
-        <mat-list-item *ngIf="notification.type == 'mention_photo'">
+        <mat-list-item *ngIf="notification.type == 'mention_photo'; else noType">
           {{notification.user.name}} mentioned you in it's new photo.
           <h6>On {{notification.dateTime | date}}</h6>
         </mat-list-item>
+        <ng-template #noType>
+          <mat-list-item>
+            <h6>No notifications so far.</h6>
+          </mat-list-item>
+        </ng-template>
         <mat-divider></mat-divider>
       </mat-list>
     </mat-card-content>

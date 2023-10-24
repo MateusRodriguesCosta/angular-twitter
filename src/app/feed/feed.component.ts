@@ -19,7 +19,6 @@ export class FeedComponent implements OnInit {
   }
 
   loadNewTweets(tweet?: Tweet) {
-    console.log(tweet)
     if (tweet) {
       this.tweets.push(tweet);
       this.sortTweets();

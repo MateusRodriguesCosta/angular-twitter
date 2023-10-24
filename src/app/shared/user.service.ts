@@ -19,8 +19,12 @@ export class UserService {
     return this.http.get<User>(serviceURL.MainUrl + `/users/${userId}`);
   }
 
-  public userFollowers(userId: string): Observable<User> {
-    return this.http.get<User>(serviceURL.MainUrl + `/users/${userId}/followers`);
+  public userFollowers(userId: string): Observable<User[]> {
+    return this.http.get<User[]>(serviceURL.MainUrl + `/users/${userId}/followers`);
+  }
+
+  public userFollowing(userId: string): Observable<User[]> {
+    return this.http.get<User[]>(serviceURL.MainUrl + `/users/${userId}/following`);
   }
 
   get localUser(): User {

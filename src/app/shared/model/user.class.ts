@@ -4,6 +4,12 @@ export class User {
   email: string;
   password: string;
   address: string;
+  phone: String;
+  bio: string;
+  joinedDate: string;
+  verifiedAccount: boolean;
+  followers: User[];
+  following: User[];
 
   constructor(id: string, name: string, email: string, password: string, address: string) {
     this.id = id;
