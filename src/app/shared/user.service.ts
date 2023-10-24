@@ -15,6 +15,14 @@ export class UserService {
     return this.http.get<User[]>(serviceURL.MainUrl + `/users/`);
   }
 
+  public userTweets(userId: string): Observable<User> {
+    return this.http.get<User>(serviceURL.MainUrl + `/users/${userId}`);
+  }
+
+  public userFollowers(userId: string): Observable<User> {
+    return this.http.get<User>(serviceURL.MainUrl + `/users/${userId}/followers`);
+  }
+
   get localUser(): User {
     const user = sessionStorage.getItem("current-user");
     if (user) return JSON.parse(user);

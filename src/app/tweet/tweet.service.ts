@@ -21,7 +21,7 @@ export class TweetService {
   }
 
   public addLike(tweetId: string) {
-    return this.http.patch<Tweet>(serviceURL.MainUrl + `/tweets/like/${tweetId}`, null);
+    return this.http.patch<Tweet>(serviceURL.MainUrl + `/tweets/${tweetId}/like`, null);
   }
 
 }
